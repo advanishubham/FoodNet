@@ -1,16 +1,8 @@
 # foodnet
 
-A new Flutter project.
+This is a flutter project for UI. I have developed the UI of this project to test my UI skills and acknowledge field I need to improve. This project is built for e-commerce snacks and sweet shop.
 
-## Getting Started
+**Disclaimer**
+The ressemblence of name and photos is pure coincidence
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
