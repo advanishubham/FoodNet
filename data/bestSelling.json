@@ -1,0 +1,38 @@
+[
+    {
+        "image" : "images/best_selling/best1.png", 
+        "title" : "Khajur Pak",
+        "price" : "350",
+        "weight" : "250"
+    },
+    {
+        "image" : "images/best_selling/best5.png", 
+        "title" : "Free Delivery",
+        "price" : "",
+        "weight" : ""
+    },
+    {
+        "image" : "images/best_selling/best2.png", 
+        "title" : "Baked Vadapav",
+        "price" : "150",
+        "weight" : "200"
+    },
+    {
+        "image" : "images/best_selling/best3.png", 
+        "title" : "Undhyu",
+        "price" : "550",
+        "weight" : "800"
+    },
+    {
+        "image" : "images/best_selling/best4.png", 
+        "title" : "Colocasia Leaf",
+        "price" : "350",
+        "weight" : "100"
+    },
+    {
+        "image" : "images/top_picks/peda.png", 
+        "title" : "BlueBerry Peda",
+        "price" : "265",
+        "weight" : "250"
+    }
+]

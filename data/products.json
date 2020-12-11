@@ -1,0 +1,38 @@
+[
+    {
+        "image" : "images/top_picks/5Star.png", 
+        "title" : "5 Star",
+        "price" : "1790",
+        "weight" : "650"
+    },
+    {
+        "image" : "images/top_picks/ghughra.png", 
+        "title" : "Sweet Ghughra",
+        "price" : "225",
+        "weight" : "250"
+    },
+    {
+        "image" : "images/top_picks/chivda.png", 
+        "title" : "chivda",
+        "price" : "80",
+        "weight" : "200"
+    },
+    {
+        "image" : "images/top_picks/goldCoin.png", 
+        "title" : "Gold Coin",
+        "price" : "2750",
+        "weight" : "250"
+    },
+    {
+        "image" : "images/top_picks/ladoo.png", 
+        "title" : "Imunity Ladoo",
+        "price" : "350",
+        "weight" : "250"
+    },
+    {
+        "image" : "images/top_picks/peda.png", 
+        "title" : "BlueBerry Peda",
+        "price" : "265",
+        "weight" : "250"
+    }
+]
