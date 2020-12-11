@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        
         backgroundColor: Colors.white,
         leading: SizedBox(
           child: Row(
@@ -34,11 +35,15 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        title: Expanded(
-          child: Image(
-            fit: BoxFit.contain,
-            image: AssetImage('images/logo.png')
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image(
+              image: AssetImage('images/logo.png'),
+              fit: BoxFit.cover,
+              height: 65.0,
+            )
+          ],
         ),
         actions: [
           Badge(
