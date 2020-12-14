@@ -54,7 +54,14 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         body: CustomScrollView(
-          slivers: <Widget>[SearchBar(), PhotoSlider(), HorizontalScroll(), TopPicks(), TopOffers(), BestSelling() ],
+          slivers: <Widget>[
+            SearchBar(),
+            PhotoSlider(),
+            HorizontalScroll(),
+            TopPicks(),
+            TopOffers(),
+            BestSelling()
+          ],
         ));
   }
 }

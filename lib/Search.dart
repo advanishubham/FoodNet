@@ -13,15 +13,15 @@ class _SearchBarState extends State<SearchBar> {
         return Padding(
           padding: EdgeInsets.all(10.0),
           child: Container(
+            height: 50,
             child: TextField(
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search),
                   hintText: 'What are you looking for?',
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                      borderSide: BorderSide(
-                        color: Colors.grey,
-                      )),
+                  hintStyle: TextStyle(color: Colors.grey[400]),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(90.0)),
+                      borderSide: BorderSide(color: Colors.grey[400])),
                   suffixIcon: Icon(Icons.mic_none)),
             ),
           ),

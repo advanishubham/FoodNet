@@ -11,6 +11,9 @@ class _HorizontalScrollState extends State<HorizontalScroll> {
     return SliverList(
       delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
         return Container(
+          margin: EdgeInsets.only(top: 13),
+          decoration: BoxDecoration(
+              color: Colors.white, border: Border.all(color: Colors.grey[200])),
           height: 80.0,
           child: ListView(
             shrinkWrap: true,
@@ -62,7 +65,10 @@ class Product extends StatelessWidget {
             ),
             subtitle: Container(
               alignment: Alignment.topCenter,
-              child: Text(productName),
+              child: Text(
+                productName,
+                style: TextStyle(color: Colors.grey[700], fontSize: 14),
+              ),
             )),
       )),
     );

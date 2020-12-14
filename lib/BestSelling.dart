@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class BestSelling extends StatefulWidget {
@@ -12,78 +13,113 @@ class _BestSellingState extends State<BestSelling> {
   Widget build(BuildContext context) {
     return SliverList(
       delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
-        return Column(children: <Widget>[
+        return Column(children: [
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(3.0),
             child: ListTile(
-                leading: Icon(Icons.thumb_up), title: Text("Best Selling")),
+                leading: Icon(Icons.thumb_up),
+                title: Align(
+                  alignment: Alignment(-1.2, 0.0),
+                  child: Text(
+                    "Best Selling",
+                  ),
+                )),
           ),
           FutureBuilder(
-            future: DefaultAssetBundle.of(context)
-                .loadString('data/bestSelling.json'),
-            builder: (context, snapshot) {
-              var products = json.decode(snapshot.data.toString());
-              return Container(
-                margin: EdgeInsets.all(12),
-                decoration: ShapeDecoration(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0))),
-                child: StaggeredGridView.countBuilder(
+              future: DefaultAssetBundle.of(context)
+                  .loadString('data/bestSelling.json'),
+              builder: (context, snapshot) {
+                var products = json.decode(snapshot.data.toString());
+                return StaggeredGridView.countBuilder(
+                    physics: ScrollPhysics(),
                     shrinkWrap: true,
                     crossAxisCount: 2,
-                    crossAxisSpacing: 12,
-                    mainAxisSpacing: 12,
+                    crossAxisSpacing: 3,
+                    mainAxisSpacing: 3,
                     itemCount: products.length,
-                    physics: ScrollPhysics(),
                     itemBuilder: (context, index) {
                       return Card(
+                        margin: EdgeInsets.all(8.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0)),
                         semanticContainer: true,
                         clipBehavior: Clip.antiAlias,
-                        shadowColor: Colors.grey,
+                        shadowColor: Colors.grey[600],
+                        elevation: 4.0,
                         child: Column(
                           children: <Widget>[
-                            products[index]['price'].toString().isEmpty
-                                ? Padding(
-                                    padding: EdgeInsets.all(1.0),
-                                  )
-                                : ListTile(
-                                    leading: Text("Trupti"),
-                                    trailing: IconButton(
-                                      icon: Icon(Icons.add),
-                                      onPressed: null,
-                                    ),
+                            Stack(children: [
+                              ListTile(
+                                leading: Text("Trupti",
+                                    style: GoogleFonts.elsieSwashCaps(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                        color: Colors.black87)),
+                              ),
+                              Positioned(
+                                top: 0.0,
+                                right: 0.0,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(12.0)),
+                                    color: Colors.grey[50],
                                   ),
-                            Expanded(
-                              child: Container(
-                                height: 50,
-                                margin: EdgeInsets.all(5.0),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  image: DecorationImage(
-                                    image: AssetImage(products[index]['image']),
-                                    fit: BoxFit.fill,
+                                  child: IconButton(
+                                    icon: Icon(Icons.add),
+                                    onPressed: null,
+                                    color: Colors.black,
                                   ),
                                 ),
+                              )
+                            ]),
+                            Expanded(
+                                child: Container(
+                              margin: EdgeInsets.all(5.0),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                image: DecorationImage(
+                                  image: AssetImage(products[index]['image']),
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
                             )),
-                            Padding(
-                                padding: EdgeInsets.all(10.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: products[index]['price']
-                                          .toString()
-                                          .isEmpty
-                                      ? <Widget>[
-                                          Text(products[index]['title']),
-                                        ]
-                                      : <Widget>[
-                                          Text(products[index]['title']),
-                                          Text(
-                                              "Rs: ${products[index]['price']}"),
-                                          Text(
-                                              'Per Packet: ${products[index]['weight']} grams'),
-                                        ],
-                                ))
+                            Align(
+                              alignment: Alignment(-0.5, 0.0),
+                              child: Padding(
+                                  padding: EdgeInsets.all(4.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: products[index]['price']
+                                            .toString()
+                                            .isEmpty
+                                        ? [
+                                            Padding(
+                                                padding:
+                                                    EdgeInsets.only(top: 1))
+                                          ]
+                                        : <Widget>[
+                                            Text(
+                                              '${products[index]['title']}',
+                                              style: TextStyle(
+                                                  color: Colors.grey[600]),
+                                            ),
+                                            Text(
+                                              "₹ ${products[index]['price']}",
+                                              style: TextStyle(
+                                                  color: Colors.grey[600]),
+                                            ),
+                                            Text(
+                                              'per packet [${products[index]['weight']}]',
+                                              style: TextStyle(
+                                                  color: Colors.grey[400],
+                                                  fontSize: 12.0),
+                                            ),
+                                          ],
+                                  )),
+                            )
                           ],
                         ),
                       );
@@ -91,10 +127,8 @@ class _BestSellingState extends State<BestSelling> {
                     staggeredTileBuilder: (index) {
                       return new StaggeredTile.count(
                           1, index.isEven ? 1.2 : 1.8);
-                    }),
-              );
-            },
-          ),
+                    });
+              }),
         ]);
       }, childCount: 1),
     );

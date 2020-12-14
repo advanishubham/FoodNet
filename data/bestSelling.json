@@ -3,7 +3,7 @@
         "image" : "images/best_selling/best1.png", 
         "title" : "Khajur Pak",
         "price" : "350",
-        "weight" : "250"
+        "weight" : "250 gm"
     },
     {
         "image" : "images/best_selling/best5.png", 
@@ -15,24 +15,24 @@
         "image" : "images/best_selling/best2.png", 
         "title" : "Baked Vadapav",
         "price" : "150",
-        "weight" : "200"
+        "weight" : "200 gm"
     },
     {
         "image" : "images/best_selling/best3.png", 
         "title" : "Undhyu",
         "price" : "550",
-        "weight" : "800"
+        "weight" : "800 gm"
     },
     {
         "image" : "images/best_selling/best4.png", 
         "title" : "Colocasia Leaf",
         "price" : "350",
-        "weight" : "100"
+        "weight" : "100 gm"
     },
     {
         "image" : "images/top_picks/peda.png", 
         "title" : "BlueBerry Peda",
         "price" : "265",
-        "weight" : "250"
+        "weight" : "250 gm"
     }
 ]

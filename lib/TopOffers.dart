@@ -38,7 +38,9 @@ class _TopOffersState extends State<TopOffers> {
         Padding(
           padding: EdgeInsets.all(8.0),
           child: ListTile(
-              leading: Icon(MdiIcons.percent), title: Text("Top Offers")),
+              leading: Icon(MdiIcons.percent),
+              title: Align(
+                  alignment: Alignment(-1.2, 0.0), child: Text("Top Offers"))),
         ),
         Container(
           height: 140.0,
